@@ -1,3 +1,4 @@
+// โมเดลรายการสินค้าในตะกร้าและสถานะตะกร้าร่วมที่หน้าร้านกับหน้าเช็กเอาต์ใช้
 import 'package:flutter/foundation.dart';
 
 import 'product_model.dart';

@@ -1,3 +1,4 @@
+// หน้าผู้ดูแลระบบสำหรับค้นหาและตรวจสอบสินค้า รวมถึงสรุปจำนวนสินค้าและสต็อก
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 

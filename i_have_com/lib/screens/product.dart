@@ -1,3 +1,4 @@
+// บริการข้อมูลสินค้า: อ่าน/เขียน Firestore และเก็บสำเนาใน SQLite บนอุปกรณ์ที่รองรับ
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 

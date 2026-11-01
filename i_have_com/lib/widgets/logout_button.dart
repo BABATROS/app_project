@@ -1,3 +1,4 @@
+// ปุ่มออกจากระบบที่ใช้ร่วมกันในหน้าผู้ใช้และผู้ขาย ยืนยันก่อนล้างเซสชัน Firebase
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -39,6 +40,7 @@ class _LogoutButtonState extends State<LogoutButton> {
     setState(() => _isLoggingOut = true);
 
     try {
+      // ล้างเซสชัน Firebase แล้วล้างประวัติหน้าก่อนกลับไปหน้าเข้าสู่ระบบ
       await FirebaseAuth.instance.signOut();
 
       if (!mounted) return;

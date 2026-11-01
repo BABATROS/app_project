@@ -1,3 +1,4 @@
+// หน้าแชตระหว่างผู้ใช้สองคน รับ/ส่งข้อความและบันทึกสถานะอ่านข้อความใน Firestore
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -104,7 +105,7 @@ class _ChatScreenState extends State<ChatScreen> {
     if (_lastReadMessageId == latestMessage.id) return;
 
     try {
-      // Keep this field consistent with Firestore Rules.
+      // ใช้ชื่อฟิลด์เดียวกับที่ Firestore Rules กำหนดไว้
       await _readRef.set({
         'lastReadAt': FieldValue.serverTimestamp(),
       }, SetOptions(merge: true));
@@ -146,6 +147,7 @@ class _ChatScreenState extends State<ChatScreen> {
     setState(() => _sending = true);
 
     try {
+      // อ่านชื่อผู้ส่ง แล้วบันทึกข้อมูลห้องกับข้อความใน batch เดียวกัน
       final userDoc = await _db.collection('users').doc(user.uid).get();
 
       final myName = _myDisplayName(user, userDoc.data() ?? {});

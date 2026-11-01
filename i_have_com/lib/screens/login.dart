@@ -1,3 +1,4 @@
+// หน้าเข้าสู่ระบบ เชื่อม Firebase Authentication และพาผู้ใช้ไปยังหน้าตามสิทธิ์บัญชี
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

@@ -1,3 +1,4 @@
+// แหล่งข้อมูลสินค้าให้หน้าร้านและหน้าผู้ขาย โดยซิงก์ Firestore กับ SQLite
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 
@@ -11,7 +12,7 @@ class ProductService {
 
   final LocalDatabase localDatabase = LocalDatabase.instance;
 
-  // บันทึก SQLite เฉพาะแพลตฟอร์มที่รองรับ
+  // บันทึกลง SQLite เฉพาะแพลตฟอร์มที่รองรับ
   Future<void> _cacheProduct(Product product) async {
     if (kIsWeb) return;
 
@@ -23,7 +24,7 @@ class ProductService {
     }
   }
 
-  // อ่านสินค้าจาก Firestore
+  // สตรีมสินค้าจาก Firestore และอัปเดตแคชในเครื่องเมื่อมีข้อมูลใหม่
   Stream<List<Product>> getProducts() {
     return products.snapshots().map((snapshot) {
       final productList = snapshot.docs.map((doc) {
@@ -44,7 +45,7 @@ class ProductService {
     }
   }
 
-  // เพิ่มสินค้า
+  // เพิ่มสินค้าใน Firestore แล้วเก็บสำเนาในแคช
   Future<void> addProduct(Product product) async {
     final docRef = await products.add(product.toMap());
 
@@ -61,13 +62,13 @@ class ProductService {
     await _cacheProduct(savedProduct);
   }
 
-  // แก้ไขสินค้า
+  // แก้ไขสินค้าใน Firestore แล้วปรับข้อมูลในแคช
   Future<void> updateProduct(Product product) async {
     await products.doc(product.id).update(product.toMap());
     await _cacheProduct(product);
   }
 
-  // ลบสินค้า
+  // ลบสินค้าจาก Firestore และนำรายการนั้นออกจากแคชในเครื่อง
   Future<void> deleteProduct(String productId) async {
     await products.doc(productId).delete();
 
@@ -81,7 +82,7 @@ class ProductService {
     }
   }
 
-  // อ่านสินค้าจาก SQLite เฉพาะแพลตฟอร์มที่รองรับ
+  // อ่านสินค้าใน SQLite เฉพาะแพลตฟอร์มที่รองรับ
   Future<List<Product>> getLocalProducts() async {
     if (kIsWeb) return [];
 

@@ -1,3 +1,4 @@
+// สร้างคำสั่งซื้อจากตะกร้าปัจจุบัน โดยตรวจร้าน/สต็อกก่อนบันทึกลง Firestore
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -8,6 +9,7 @@ class OrderService {
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  // ถูกเรียกจากหน้าตะกร้าเพื่อยืนยันสต็อกและสร้างเอกสารคำสั่งซื้อ
   Future<String> createOrder() async {
     final user = _auth.currentUser;
 

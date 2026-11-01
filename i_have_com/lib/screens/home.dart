@@ -1,3 +1,4 @@
+// หน้าร้านค้าหลัก: ค้นหา/กรองสินค้า เปิดรายละเอียด ตะกร้า โปรไฟล์ คำสั่งซื้อ และแชต
 import 'dart:convert';
 import 'dart:typed_data';
 
@@ -66,6 +67,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _openCart() {
+    // ปุ่มตะกร้าจากหน้าร้านเปิดรายการสินค้าที่เลือกไว้
     Navigator.push(
       context,
       MaterialPageRoute<void>(builder: (_) => const CartPage()),
@@ -73,6 +75,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _openOrderHistory() {
+    // ทางลัดจากหน้าร้านไปดูคำสั่งซื้อของบัญชีปัจจุบัน
     Navigator.push(
       context,
       MaterialPageRoute<void>(builder: (_) => const OrderHistoryPage()),
@@ -80,6 +83,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _openProfile() {
+    // ทางลัดไปดูและแก้ไขข้อมูลโปรไฟล์
     Navigator.push(
       context,
       MaterialPageRoute<void>(builder: (_) => const ProfilePage()),
@@ -87,6 +91,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _openChats() {
+    // ทางลัดไปยังรายการบทสนทนาที่บันทึกใน Firestore
     Navigator.push(
       context,
       MaterialPageRoute<void>(builder: (_) => const ChatListScreen()),

@@ -1,3 +1,4 @@
+// หน้าตั้งค่าร้านสำหรับผู้ขายที่สมัครแล้วแต่ยังไม่มีร้าน บันทึกข้อมูลร้านใน Firestore
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -44,6 +45,7 @@ class _ShopSetupPageState extends State<ShopSetupPage> {
     });
 
     try {
+      // บันทึกร้านโดยผูก ownerId กับบัญชีผู้ขายที่กำลังเข้าสู่ระบบ
       await FirebaseFirestore.instance.collection('shops').add({
         'shopName': shopName,
         'ownerId': user.uid,

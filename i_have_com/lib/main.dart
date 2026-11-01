@@ -1,3 +1,4 @@
+// จุดเริ่มต้นของแอป: ตั้งค่า Firebase, ระบบแจ้งเตือน และหน้าเริ่มต้นก่อนเข้าสู่ระบบ
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -10,6 +11,7 @@ import 'services/push_service.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // เตรียมบริการ Firebase และระบบแจ้งเตือนก่อนสร้างหน้าแอป
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   ChatNotificationService.init();
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // กำหนดธีมและคีย์ส่วนกลางที่บริการแจ้งเตือนใช้เปิดหน้าแชต/แสดงข้อความ
     return MaterialApp(
       title: 'I HAVE COM',
       theme: AppTheme.lightTheme,
@@ -57,7 +60,7 @@ class StartPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Logo and brand
+                      // โลโก้และชื่อแบรนด์
                       Row(
                         children: [
                           Container(
@@ -105,7 +108,7 @@ class StartPage extends StatelessWidget {
 
                       const SizedBox(height: 42),
 
-                      // Welcome heading
+                      // ข้อความต้อนรับบนหน้าเริ่มต้น
                       Container(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 12,
@@ -172,7 +175,7 @@ class StartPage extends StatelessWidget {
 
                       const SizedBox(height: 32),
 
-                      // Minimal icon panel instead of a product image
+                      // แผงไอคอนแนะนำร้านค้าแทนภาพสินค้า
                       Container(
                         width: double.infinity,
                         padding: const EdgeInsets.symmetric(
@@ -226,7 +229,7 @@ class StartPage extends StatelessWidget {
 
                       const SizedBox(height: 28),
 
-                      // Four features
+                      // จุดเด่นของร้านค้า
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const [
@@ -266,7 +269,7 @@ class StartPage extends StatelessWidget {
 
                       const SizedBox(height: 30),
 
-                      // Keep the original navigation to LoginPage
+                      // ปุ่มเริ่มใช้งานนำไปยังหน้าเข้าสู่ระบบ
                       SizedBox(
                         width: double.infinity,
                         height: 58,

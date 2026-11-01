@@ -1,3 +1,4 @@
+// เมนูหลักของผู้ดูแลระบบ ใช้เปิดหน้าจัดการผู้ใช้ ร้านค้า สินค้า และคำสั่งซื้อ
 import 'package:flutter/material.dart';
 
 import 'admin_users.dart';

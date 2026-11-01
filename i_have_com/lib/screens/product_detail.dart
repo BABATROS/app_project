@@ -1,3 +1,4 @@
+// หน้ารายละเอียดสินค้าที่เปิดจากหน้าร้าน แสดงข้อมูลสินค้าและเพิ่มสินค้าลงตะกร้ากลาง
 import 'dart:convert';
 import 'dart:typed_data';
 
@@ -55,6 +56,7 @@ class ProductDetailPage extends StatelessWidget {
   }
 
   void _addToCart(BuildContext context) {
+    // ปุ่มเพิ่มลงตะกร้าอัปเดต CartModel กลางที่หน้าตะกร้าใช้แสดงผล
     CartModel.instance.addProduct(product);
 
     ScaffoldMessenger.of(context)

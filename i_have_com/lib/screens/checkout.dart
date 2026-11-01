@@ -1,3 +1,4 @@
+// หน้ายืนยันคำสั่งซื้อ ตรวจสต็อกจาก Firestore และบันทึกคำสั่งซื้อของลูกค้า
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';

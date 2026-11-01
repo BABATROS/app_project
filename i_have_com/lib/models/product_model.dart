@@ -1,3 +1,4 @@
+// โครงสร้างข้อมูลสินค้าและตัวแปลงข้อมูลจาก/ไปยัง Firestore หรือฐานข้อมูลในเครื่อง
 class Product {
   final String id;
   final String name;

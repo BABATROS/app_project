@@ -1,3 +1,4 @@
+// หน้าตะกร้าสินค้า: ปรับจำนวน/นำสินค้าออก และส่งต่อไปยังขั้นตอนสร้างคำสั่งซื้อ
 import 'package:flutter/material.dart';
 
 import '../models/cart_model.dart';
@@ -33,6 +34,7 @@ class _CartPageState extends State<CartPage> {
     });
 
     try {
+      // ส่งข้อมูลตะกร้าให้ OrderService ตรวจสินค้าและสร้างออเดอร์ใน Firestore
       final orderId = await OrderService().createOrder();
 
       CartModel.instance.clearCart();
@@ -97,7 +99,7 @@ class _CartPageState extends State<CartPage> {
                 child: ListView(
                   padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
                   children: [
-                    // Delivery information
+                    // ข้อมูลแจ้งเตือนให้ตรวจรายการและจำนวนสินค้าก่อนสั่งซื้อ
                     Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(

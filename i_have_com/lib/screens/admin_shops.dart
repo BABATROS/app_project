@@ -1,3 +1,4 @@
+// หน้าผู้ดูแลระบบสำหรับดูรายการร้านค้าที่ลงทะเบียนไว้ใน Firestore
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 

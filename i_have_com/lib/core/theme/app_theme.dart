@@ -1,7 +1,8 @@
+// รวมชุดสีและรูปแบบ UI กลาง เพื่อให้ทุกหน้าของแอปใช้ธีมเดียวกัน
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  // Brand colors: I HAVE COM
+  // สีหลักของแบรนด์ I HAVE COM
   static const Color primary = Color(0xFFFF6B00);
   static const Color primaryDark = Color(0xFFE65F00);
   static const Color dark = Color(0xFF111111);
@@ -29,7 +30,7 @@ class AppTheme {
     visualDensity: VisualDensity.standard,
     splashFactory: InkRipple.splashFactory,
 
-    // Typography
+    // รูปแบบตัวอักษรที่ใช้ร่วมกันทั้งแอป
     textTheme: const TextTheme(
       headlineLarge: TextStyle(
         fontSize: 30,

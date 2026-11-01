@@ -1,3 +1,4 @@
+// เชื่อมการแตะการแจ้งเตือนเข้ากับหน้าห้องแชตและบริการแจ้งเตือนในแอป
 import 'package:flutter/material.dart';
 
 import '../screens/chat_screen.dart';

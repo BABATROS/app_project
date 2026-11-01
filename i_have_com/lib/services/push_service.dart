@@ -8,9 +8,10 @@ import 'package:flutter/widgets.dart';
 
 import 'chat_notification_service.dart';
 
-/// Push Notification (แอปอยู่เบื้องหลังหรือปิดอยู่)
+/// แจ้งเตือนเมื่อแอปอยู่เบื้องหลังหรือปิดอยู่
 /// เรียก PushService.init() ครั้งเดียวตอนเริ่มแอป ต่อจาก ChatNotificationService.init()
 /// ทำงานเฉพาะ Android / iOS (ข้ามบน Web)
+// ลงทะเบียน FCM token ตามบัญชี และเปิดห้องแชตเมื่อแตะการแจ้งเตือนแบบพุช
 class PushService {
   PushService._();
 

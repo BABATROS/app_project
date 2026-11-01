@@ -1,3 +1,4 @@
+// หน้าเลือกผู้ใช้เพื่อเริ่มบทสนทนาใหม่ โดยค้นหาโปรไฟล์สาธารณะและเปิดหน้าแชต
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

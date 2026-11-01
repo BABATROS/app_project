@@ -1,3 +1,4 @@
+// ฐานข้อมูล SQLite ในอุปกรณ์สำหรับแคชสินค้า เพื่อให้บริการสินค้าใช้งานข้อมูลในเครื่องได้
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 

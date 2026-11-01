@@ -1,3 +1,4 @@
+// จัดการการแจ้งเตือนข้อความขณะใช้งานแอป และเปิดบทสนทนาผ่าน Navigator ส่วนกลาง
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';

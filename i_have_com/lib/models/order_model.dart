@@ -1,3 +1,4 @@
+// แปลงข้อมูลคำสั่งซื้อระหว่างรูปแบบแอปกับเอกสารใน Firestore
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class OrderModel {

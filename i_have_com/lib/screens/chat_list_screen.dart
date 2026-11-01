@@ -1,3 +1,4 @@
+// หน้ารวมบทสนทนาของผู้ใช้ เข้าจากส่วนแชตและเชื่อมไปยังหน้าเริ่มแชตหรือหน้าแชต
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,7 @@ class ChatListScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('แชทของฉัน')),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
+          // ปุ่มนี้เปิดหน้าเลือกผู้ใช้ก่อนสร้างหรือเปิดบทสนทนา
           Navigator.push(
             context,
             MaterialPageRoute<void>(builder: (_) => const NewChatScreen()),
